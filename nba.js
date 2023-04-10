@@ -1,9 +1,36 @@
-fetch('https://www.balldontlie.io/api/v1/players')
+fetch('https://www.balldontlie.io/api/v1/teams')
+  .then(response => response.json())
+  .then(data => {
+    // handle response data
+    let teams = data.data.filter(team => team.conference === 'West');
+    let tableHtml = '<table>';
+    tableHtml += '<tr><th>Team Name</th><th>City</th><th>Conference</th></tr>';
+
+    // create HTML for each team row
+    teams.forEach(team => {
+      tableHtml += `
+        <tr>
+          <td>${team.full_name}</td>
+          <td>${team.city}</td>
+          <td>${team.conference}</td>
+        </tr>`;
+    });
+
+    tableHtml += '</table>';
+    document.getElementById('teams').innerHTML = tableHtml;
+  })
+  .catch(error => console.error(error));
+
+
+
+fetch('https://www.balldontlie.io/api/v1/players?per_page=1000')
   .then(response => response.json())
   .then(data => {
 
     // handle response data
-    let players = data.data;
+    let players = data.data.filter(player => player.team.conference === 'West');
+
+    //let players = data.data;
     let tableHtml = '<table>';
     tableHtml += '<tr><th>Name</th><th>Position</th><th>Team</th></tr>';
     
@@ -108,3 +135,4 @@ fetch('https://www.balldontlie.io/api/v1/players')
   });
 })
   .catch(error => console.error(error));
+
