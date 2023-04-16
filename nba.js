@@ -4,7 +4,7 @@ fetch('https://www.balldontlie.io/api/v1/teams')
     // handle response data
     let teams = data.data.filter(team => team.conference === 'West');
     let tableHtml = '<table>';
-    tableHtml += '<tr><th>Team Name</th><th>City</th><th>Conference</th></tr>';
+    tableHtml += '<tr><th>Team Name</th><th>City</th><</tr>';
 
     // create HTML for each team row
     teams.forEach(team => {
@@ -12,7 +12,6 @@ fetch('https://www.balldontlie.io/api/v1/teams')
         <tr>
           <td>${team.full_name}</td>
           <td>${team.city}</td>
-          <td>${team.conference}</td>
         </tr>`;
     });
 
@@ -21,8 +20,6 @@ fetch('https://www.balldontlie.io/api/v1/teams')
   })
   .catch(error => console.error(error));
 
-
-
 fetch('https://www.balldontlie.io/api/v1/players?per_page=1000')
   .then(response => response.json())
   .then(data => {
@@ -30,7 +27,6 @@ fetch('https://www.balldontlie.io/api/v1/players?per_page=1000')
     // handle response data
     let players = data.data.filter(player => player.team.conference === 'West');
 
-    //let players = data.data;
     let tableHtml = '<table>';
     tableHtml += '<tr><th>Name</th><th>Position</th><th>Team</th></tr>';
     
@@ -99,17 +95,36 @@ fetch('https://www.balldontlie.io/api/v1/players?per_page=1000')
               // handle stats response data
               let player1Stats = statsData[0].data;
               let player2Stats = statsData[1].data;
+
+              ast1 = player1Stats[0].ast ?? "N/A"
+              ast2 = player2Stats[0].ast ?? "N/A"
+              reb1 = player1Stats[0].reb ?? "N/A"
+              reb2 = player2Stats[0].reb ?? "N/A"
+              blk1 = player1Stats[0].blk ?? "N/A"
+              blk2 = player2Stats[0].blk ?? "N/A"
+              stl1 = player1Stats[0].stl ?? "N/A"
+              stl2 = player2Stats[0].stl ?? "N/A"
+              turnover1 = player1Stats[0].turnover ?? "N/A"
+              turnover2 = player2Stats[0].turnover ?? "N/A"
+              fg_pct1 = player1Stats[0].fg_pct ?? "N/A"
+              fg_pct2 = player2Stats[0].fg_pct ?? "N/A"
+              fg3_pct1 = player1Stats[0].fg3_pct ?? "N/A"
+              fg3_pct2 = player2Stats[0].fg3_pct ?? "N/A"
+              ft_pct1 = player1Stats[0].ft_pct ?? "N/A"
+              ft_pct2 = player2Stats[0].ft_pct ?? "N/A"
     
               infoHtml += `
                 <table>
-                  <tr><td>Assists</td><td>${player1Stats[0].ast}</td><td>${player2Stats[0].ast}</td></tr>
-                  <tr><td>Rebounds</td><td>${player1Stats[0].reb}</td><td>${player2Stats[0].reb}</td></tr>
-                  <tr><td>Blocks</td><td>${player1Stats[0].blk}</td><td>${player2Stats[0].blk}</td></tr>
-                  <tr><td>Steals</td><td>${player1Stats[0].stl}</td><td>${player2Stats[0].stl}</td></tr>
-                  <tr><td>Turnovers</td><td>${player1Stats[0].turnover}</td><td>${player2Stats[0].turnover}</td></tr>
-                  <tr><td>Field Goal %</td><td>${player1Stats[0].fg_pct}%</td><td>${player2Stats[0].fg_pct}%</td></tr>
-                  <tr><td>3-Point %</td><td>${player1Stats[0].fg3_pct}%</td><td>${player2Stats[0].fg3_pct}%</td></tr>
-                  <tr><td>Free Throw %</td><td>${player1Stats[0].ft_pct}%</td><td>${player2Stats[0].ft_pct}%</td></tr>`;
+                  <tr><td>Assists</td><td>${ast1}</td><td>${ast2}</td></tr>
+                  <tr><td>Rebounds</td><td>${reb1}</td><td>${reb2}</td></tr>
+                  <tr><td>Blocks</td><td>${blk1}</td><td>${blk2}</td></tr>
+                  <tr><td>Steals</td><td>${stl1}</td><td>${stl2}</td></tr>
+                  <tr><td>Turnovers</td><td>${turnover1}</td><td>${turnover2}</td></tr>
+                  <tr><td>Field Goal %</td><td>${fg_pct1}%</td><td>${fg_pct2}%</td></tr>
+                  <tr><td>3-Point %</td><td>${fg3_pct1}%</td><td>${fg3_pct1}%</td></tr>
+                  <tr><td>Free Throw %</td><td>${ft_pct1}%</td><td>${ft_pct2}%</td></tr>`;
+
+
                   
                   // display player comparison info on page
                   document.getElementById('player-info').innerHTML = infoHtml;
