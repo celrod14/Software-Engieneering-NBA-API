@@ -1,3 +1,3 @@
-# CPSC-3720-Software-Engieneering Sports API Project
+# CPSC-3720-Software-Engineering NBA Sports API Project
 
-In our Sports API project you are able to select a sport of your choosing, and from there you select the team or teams you want within that sport. Now you can select different players within the team and compare their stats to see who has the better stats. 
+In our NBA Sports API project. We are focusing on the west coast division. The seasons are from 1979-2023. Users are allowed to select two players within the team and compare their stats. Users are also able to see the top 3 latest news article posted from ESPN with a link included to open up the original article.
