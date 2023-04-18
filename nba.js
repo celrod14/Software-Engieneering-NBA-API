@@ -4,12 +4,12 @@ fetch('https://www.balldontlie.io/api/v1/teams')
     // handle response data
     let teams = data.data.filter(team => team.conference === 'West');
     let tableHtml = '<table>';
-    tableHtml += '<tr><th>Team Name</th><th>City</th><</tr>';
+    tableHtml += '<tr><th> Team Name </th><th> City </th></tr>';
 
     // create HTML for each team row
     teams.forEach(team => {
       tableHtml += `
-        <tr>
+        <tr data-team='${JSON.stringify(team)}'>
           <td>${team.full_name}</td>
           <td>${team.city}</td>
         </tr>`;
@@ -20,7 +20,7 @@ fetch('https://www.balldontlie.io/api/v1/teams')
   })
   .catch(error => console.error(error));
 
-fetch('https://www.balldontlie.io/api/v1/players?per_page=1000')
+fetch('https://www.balldontlie.io/api/v1/players?per_page=100000')
   .then(response => response.json())
   .then(data => {
 
@@ -123,9 +123,7 @@ fetch('https://www.balldontlie.io/api/v1/players?per_page=1000')
                   <tr><td>Field Goal %</td><td>${fg_pct1}%</td><td>${fg_pct2}%</td></tr>
                   <tr><td>3-Point %</td><td>${fg3_pct1}%</td><td>${fg3_pct1}%</td></tr>
                   <tr><td>Free Throw %</td><td>${ft_pct1}%</td><td>${ft_pct2}%</td></tr>`;
-
-
-                  
+    
                   // display player comparison info on page
                   document.getElementById('player-info').innerHTML = infoHtml;
                   document.getElementById('restart-btn').style.display = 'inline';  
@@ -133,8 +131,7 @@ fetch('https://www.balldontlie.io/api/v1/players?per_page=1000')
             .catch(error => console.error(error));
         }
       });
-    })
-                   
+    })                  
   document.getElementById('restart-btn').addEventListener('click', () => {
     // clear selected players array
     selectedPlayers = [];
@@ -150,4 +147,42 @@ fetch('https://www.balldontlie.io/api/v1/players?per_page=1000')
   });
 })
   .catch(error => console.error(error));
+
+
+
+
+const apiUrl = "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/news";
+// Retrieve the latest NBA news articles
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Extract the latest 5 NBA news articles
+    const latestArticles = data.articles.slice(0, 3);
+
+    // Display each article on the web page
+    const articlesDiv = document.getElementById("articles");
+    latestArticles.forEach(article => {
+      const articleDiv = document.createElement("div");
+      articleDiv.classList.add("article");
+      articleDiv.innerHTML = `
+        <h2>${article.headline}</h2>
+        <img src="${article.images[0].url}" width="400" height="400">
+        <p>${article.description}</p>
+        <a href="${article.links.web.href}" class="link" target="_blank">Read more</a>
+      `;
+      articlesDiv.appendChild(articleDiv);
+    });
+
+    // Add event listener to the button to scroll down
+    const scrollButton = document.getElementById("scroll-button");
+    scrollButton.addEventListener("click", () => {
+      window.scroll({
+        top: articlesDiv.offsetTop,
+        behavior: "smooth"
+      });
+    });
+  })
+  .catch(error => console.error(error));
+
+
 

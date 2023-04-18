@@ -6,16 +6,58 @@
 	
 </head>
 <body>
-	<h1>NBA Player Stats</h1>
-  <p>West Coast Conference</p>
-  <div id="teams"></div>
 
-  <p>Select TWO Players to Compare Stats </p>
-	<div id="players"></div>
-	<div id="player-info"></div>
+	<h1>West Coast NBA Player Stats</h1>
 
+  <p>Seasons 1979 - 2023. Select TWO Players to Compare Stats</p>
+  <button id="scroll-button"> Click Here the View the Latest News! </button> 
+  <div class="table-container">
+    <div class="column">
+      <div id="teams"></div>
+      <div id="player-info"></div>
+      <button id="restart-btn"> Restart Player Selection </button>
+    </div>
 
-  <button id="restart-btn">Restart</button>
-  <script src="nba.js"></script>
+    <div class="column">
+	    <div id="players"></div>    
+
+    </div>
+  </div>
+
+  <h2>NBA Latest News</h2>
+  <div id= "articles"></div>
+   <script src="nba.js"></script> 
 </body>
 </html>
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>West Coast Teams</title>
+</head>
+<body>
+	<h1>West Coast Teams</h1>
+	<select id="team-select">
+		<option value="">Select a team</option>
+		<option value="1">Golden State Warriors</option>
+		<option value="2">Los Angeles Clippers</option>
+		<option value="3">Los Angeles Lakers</option>
+		<option value="4">Phoenix Suns</option>
+		<option value="5">Portland Trail Blazers</option>
+		<option value="6">Sacramento Kings</option>
+		<option value="7">San Antonio Spurs</option>
+		<option value="8">Seattle SuperSonics</option>
+	</select>
+	<div id="player-list"></div>
+	<script src="testing.js"></script>
+</body>
+</html>
+
+
+
+ -->
