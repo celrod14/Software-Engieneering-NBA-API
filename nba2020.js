@@ -108,7 +108,7 @@ fetch('https://www.balldontlie.io/api/v1/stats?seasons[]=2020&per_page=100000')
                   <tr><td>Field Goal %</td><td>${fg_pct1}%</td><td>${fg_pct2}%</td></tr>
                   <tr><td>3-Point %</td><td>${fg3_pct1}%</td><td>${fg3_pct1}%</td></tr>
                   <tr><td>Free Throw %</td><td>${ft_pct1}%</td><td>${ft_pct2}%</td></tr>
-				          <tr><td>Season </td><td>${player1.game.season}</td><td>${player2.game.season}</td></tr>`;
+		  <tr><td>Season </td><td>${player1.game.season}</td><td>${player2.game.season}</td></tr>`;
                   
                     // display player comparison info on page
                   document.getElementById('player-info').innerHTML = infoHtml;
