@@ -3,39 +3,50 @@
 <head>
 	<title>Sports Stats</title>
   <link rel="stylesheet" href="style.css">
-	
 </head>
-<body>
 
+<body>
 	<h1>West Coast NBA Player Stats</h1>
 
-  <p>Season 2020. Select TWO Players to Compare Stats</p>
   <button id="scroll-button"> Click Here the View the Latest News! </button> 
+  <p>Season 2020. Select TWO Players to Compare Stats within same team</p>
+
   <div class="table-container">
     <div class="column">
-	<div id="teams"></div>
+      <select id="team-dropdown">
+        <option value = "">Select a team</option>
+        <option value = "Mavericks">Dallas Mavericks</option>
+        <option value = "Nuggets">Denver Nuggets</option>
+        <option value = "Warriors">Golden State Warriors</option>
+        <option value = "Rockets">Houston Rockets</option>
+        <option value = "Clippers">LA Clippers</option>
+        <option value = "Lakers">Los Angeles Lakers</option>
+        <option value = "Grizzlies">Memphis Grizzlies</option>
+        <option value = "Timberwolves">Minnesota Timberwolves</option>
+        <option value = "Clippers">New Orleans Pelicans</option>
+        <option value = "Thunder">Oklahoma City Thunder</option>
+        <option value = "Suns">Phoenix Suns</option>
+        <option value = "Trail Blazers">Portland Trail Blazers</option>
+        <option value = "Kings">Sacramento Kings</option>
+        <option value = "Spurs">San Antonio Spurs</option>
+        <option value = "Jazz">Utah Jazz</option>
+      </select>
+      <div id="players"></div>   
+    </div>
 
+    <div class="column">
       <div id="player-info"></div>
       <button id="restart-btn"> Restart Player Selection </button>
     </div>
-
-    <div class="column">
-		<!-- <select id="team-select">
-			<option value="">Select a team</option>
-			<option value= "7">Dallas Mavericks</option>
-			<option value= "8">Denver Nuggets</option>
-			<option value= "2">Golden State Warriors</option>
-			<option value= "11">Houston Rockets</option>
-			<option value= "13">LA Clippers</option>
-			
-		</select> -->
-
-	    <div id="players"></div>   
-    </div>
   </div>
 
-  <h2>NBA Latest News</h2>
+  <h2>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    NBA Latest News
+  </h2>
   <div id= "articles"></div>
- <script src = "nba2020.js" ></script> 
+  <script src = "nba2020.js" ></script> 
 </body>
+
 </html>
