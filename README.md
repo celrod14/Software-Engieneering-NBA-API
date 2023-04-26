@@ -7,6 +7,6 @@ In our NBA Sports API project. We are focusing on getting the stats of NBA playe
 -Download latest updated branch as a zip file and extract the files<br />
 -Open the index.html file in local web browser of choice<br />
 -Search for certain names to select desired players or select from pre-generated list<br />
--Select two desired players to compare<br />
+-Select two desired players on the same team to compare<br />
 -Either press the select button on the search bar or restart button to be able to re-select player<br />
 -To see recent news select the latest news button towards the top of the site or scroll to the bottom of the page<br />
