@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html>
- <!-- this enitre iframe is what was added to implement the nba 2k playlist. -->
- <iframe style="border-radius:12px" 
- 	src="https://open.spotify.com/embed/playlist/1SslbcItuTe4M2J7s24QPh?utm_source=generator" 
- 	width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-</iframe>
 <head>
 	<title>Sports Stats</title>
+  <style>
+    
+    body {
+    background-color: azure;
+    }
+</style>
+<img style = "float:left" alt = "Logo" width = 100 length = 100 src='https://api.kickfire.com/logo?website=spurs.com' id = "image" />
+<script type="text/javascript">
+    let image = document.getElementById('image');
+    let images = ["https://api.kickfire.com/logo?website=spurs.com", "https://api.kickfire.com/logo?website=pistons.com", "https://api.kickfire.com/logo?website=76ers.com", "https://api.kickfire.com/logo?website=utahjazz.com", "https://api.kickfire.com/logo?website=celtics.com", "https://api.kickfire.com/logo?website=brooklynnets.com", "https://api.kickfire.com/logo?website=knicks.com", "https://api.kickfire.com/logo?website=raptors.com", "https://api.kickfire.com/logo?website=bulls.com", "https://api.kickfire.com/logo?website=cavs.com", "https://api.kickfire.com/logo?website=pacers.com", "https://api.kickfire.com/logo?website=bucks.com", "https://api.kickfire.com/logo?website=hawks.com", "https://api.kickfire.com/logo?website=heat.com", "https://api.kickfire.com/logo?website=orlandomagic.com", "https://api.kickfire.com/logo?website=washingtonwizards.com", "https://api.kickfire.com/logo?website=nuggets.com", "https://api.kickfire.com/logo?website=okcthunder.com", "https://api.kickfire.com/logo?website=warriors.com", "https://api.kickfire.com/logo?website=clippers.com", "https://api.kickfire.com/logo?website=lakers.com", "https://api.kickfire.com/logo?website=kings.com", "https://api.kickfire.com/logo?website=suns.com", "https://api.kickfire.com/logo?website=mavs.com", "https://api.kickfire.com/logo?website=rockets.com", "https://api.kickfire.com/logo?website=grizzlies.com", "https://api.kickfire.com/logo?website=pelicans.com"];
+    let index = 1;
+    setInterval(
+      function(){
+      image.src = images[index];
+      index++;
+      if(index == images.length-1){
+        index = 0;
+      }
+    }, 2000);
+</script>
+  <h1 style="text-align:center">West Coast NBA Player Stats</h1>
+  <p style="text-align:center">Season 2020</p>
+  <div class="container">
+    <button id="scroll-button" > Click Here the View the Latest News! </button> 
+  </div>
   <link rel="stylesheet" href="style.css">
 </head>
-
+<iframe style="border-radius:12px" 
+src="https://open.spotify.com/embed/playlist/1SslbcItuTe4M2J7s24QPh?utm_source=generator" 
+width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
 <body>
-  	<img alt = "Logo" width = 100 length = 100 src='https://api.kickfire.com/logo?website=spurs.com' id = "image" />
-	<script type="text/javascript">
-    		let image = document.getElementById('image');
-    		let images = ["https://api.kickfire.com/logo?website=spurs.com", "https://api.kickfire.com/logo?website=pistons.com", "https://api.kickfire.com/logo?website=76ers.com", "https://api.kickfire.com/logo?website=utahjazz.com", "https://api.kickfire.com/logo?website=celtics.com", "https://api.kickfire.com/logo?website=brooklynnets.com", "https://api.kickfire.com/logo?website=knicks.com", "https://api.kickfire.com/logo?website=raptors.com", "https://api.kickfire.com/logo?website=bulls.com", "https://api.kickfire.com/logo?website=cavs.com", "https://api.kickfire.com/logo?website=pacers.com", "https://api.kickfire.com/logo?website=bucks.com", "https://api.kickfire.com/logo?website=hawks.com", "https://api.kickfire.com/logo?website=heat.com", "https://api.kickfire.com/logo?website=orlandomagic.com", "https://api.kickfire.com/logo?website=washingtonwizards.com", "https://api.kickfire.com/logo?website=nuggets.com", "https://api.kickfire.com/logo?website=okcthunder.com", "https://api.kickfire.com/logo?website=warriors.com", "https://api.kickfire.com/logo?website=clippers.com", "https://api.kickfire.com/logo?website=lakers.com", "https://api.kickfire.com/logo?website=kings.com", "https://api.kickfire.com/logo?website=suns.com", "https://api.kickfire.com/logo?website=mavs.com", "https://api.kickfire.com/logo?website=rockets.com", "https://api.kickfire.com/logo?website=grizzlies.com", "https://api.kickfire.com/logo?website=pelicans.com"];
-    		let index = 1;
-    		setInterval(
-    		  function(){
-    		  image.src = images[index];
-    		  index++;
-    		  if(index == images.length-1){
-    		    index = 0;
-    		  }
-    		}, 2000);
-	</script>
-	<h1>West Coast NBA Player Stats</h1>
-
-  <button id="scroll-button"> Click Here the View the Latest News! </button> 
-  <p>Season 2020. Select TWO Players to Compare Stats within same team</p>
 
   <div class="table-container">
     <div class="column">
+      <p>Select a team and select two players within the team to compare player statistics.</p>
       <select id="team-dropdown">
         <option value = "">Select a team</option>
         <option value = "Mavericks">Dallas Mavericks</option>
@@ -50,11 +56,14 @@
         <option value = "Spurs">San Antonio Spurs</option>
         <option value = "Jazz">Utah Jazz</option>
       </select>
+      <br><br>
       <div id="players"></div>   
     </div>
 
     <div class="column">
+      <br>
       <div id="player-info"></div>
+      <br>
       <button id="restart-btn"> Restart Player Selection </button>
     </div>
   </div>

@@ -152,7 +152,7 @@ fetch('http://site.api.espn.com/apis/site/v2/sports/basketball/nba/news')
       articleDiv.classList.add("article");
       articleDiv.innerHTML = `
         <h2>${article.headline}</h2>
-        <img src="${article.images[0].url}" width="400" height="400">
+        <img src="${article.images[0].url}" width="300" height="300">
         <p>${article.description}</p>
         <a href="${article.links.web.href}" class="link" target="_blank"> Read more </a>
         `;
