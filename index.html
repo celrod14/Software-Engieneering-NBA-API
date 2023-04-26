@@ -3,50 +3,47 @@
 <head>
 	<title>Sports Stats</title>
   <link rel="stylesheet" href="style.css">
+	
 </head>
-
 <body>
+  <style>
+    img {
+      float: right;
+    }
+  </style>
+  <img alt = "Logo" width = 100 length = 100 src='https://api.kickfire.com/logo?website=spurs.com' id = "image" />
 	<h1>West Coast NBA Player Stats</h1>
 
+  <script type="text/javascript">
+    let image = document.getElementById('image');
+    let images = ["https://api.kickfire.com/logo?website=spurs.com", "https://api.kickfire.com/logo?website=pistons.com", "https://api.kickfire.com/logo?website=76ers.com", "https://api.kickfire.com/logo?website=utahjazz.com", "https://api.kickfire.com/logo?website=celtics.com", "https://api.kickfire.com/logo?website=brooklynnets.com", "https://api.kickfire.com/logo?website=knicks.com", "https://api.kickfire.com/logo?website=raptors.com", "https://api.kickfire.com/logo?website=bulls.com", "https://api.kickfire.com/logo?website=cavs.com", "https://api.kickfire.com/logo?website=pacers.com", "https://api.kickfire.com/logo?website=bucks.com", "https://api.kickfire.com/logo?website=hawks.com", "https://api.kickfire.com/logo?website=heat.com", "https://api.kickfire.com/logo?website=orlandomagic.com", "https://api.kickfire.com/logo?website=washingtonwizards.com", "https://api.kickfire.com/logo?website=nuggets.com", "https://api.kickfire.com/logo?website=okcthunder.com", "https://api.kickfire.com/logo?website=warriors.com", "https://api.kickfire.com/logo?website=clippers.com", "https://api.kickfire.com/logo?website=lakers.com", "https://api.kickfire.com/logo?website=kings.com", "https://api.kickfire.com/logo?website=suns.com", "https://api.kickfire.com/logo?website=mavs.com", "https://api.kickfire.com/logo?website=rockets.com", "https://api.kickfire.com/logo?website=grizzlies.com", "https://api.kickfire.com/logo?website=pelicans.com"];
+    let index = 1;
+    setInterval(
+      function(){
+      image.src = images[index];
+      index++;
+      if(index == images.length-1){
+        index = 0;
+      }
+    }, 2000);
+</script>
+  <p>Seasons 1979 - 2023. Select TWO Players to Compare Stats</p>
   <button id="scroll-button"> Click Here the View the Latest News! </button> 
-  <p>Season 2020. Select TWO Players to Compare Stats within same team</p>
-
   <div class="table-container">
     <div class="column">
-      <select id="team-dropdown">
-        <option value = "">Select a team</option>
-        <option value = "Mavericks">Dallas Mavericks</option>
-        <option value = "Nuggets">Denver Nuggets</option>
-        <option value = "Warriors">Golden State Warriors</option>
-        <option value = "Rockets">Houston Rockets</option>
-        <option value = "Clippers">LA Clippers</option>
-        <option value = "Lakers">Los Angeles Lakers</option>
-        <option value = "Grizzlies">Memphis Grizzlies</option>
-        <option value = "Timberwolves">Minnesota Timberwolves</option>
-        <option value = "Pelicans">New Orleans Pelicans</option>
-        <option value = "Thunder">Oklahoma City Thunder</option>
-        <option value = "Suns">Phoenix Suns</option>
-        <option value = "Trail Blazers">Portland Trail Blazers</option>
-        <option value = "Kings">Sacramento Kings</option>
-        <option value = "Spurs">San Antonio Spurs</option>
-        <option value = "Jazz">Utah Jazz</option>
-      </select>
-      <div id="players"></div>   
-    </div>
-
-    <div class="column">
+      <div id="teams"></div>
       <div id="player-info"></div>
       <button id="restart-btn"> Restart Player Selection </button>
     </div>
+
+    <div class="column">
+	    <div id="players"></div>    
+
+    </div>
   </div>
 
-  <h2>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br>
-    NBA Latest News
-  </h2>
+  <h2>NBA Latest News</h2>
   <div id= "articles"></div>
-  <script src = "nba2020.js" ></script> 
+   <script src="nba.js"></script> 
 </body>
-
 </html>
