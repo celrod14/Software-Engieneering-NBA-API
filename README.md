@@ -17,3 +17,13 @@ In our NBA Sports API project. We are focusing on getting the stats of NBA playe
 -LA Clippers<br />
 -Los Angeles Lakers<br />
 -New Orlean Pelicans<br />
+
+# Contributors
+-Jackson Dickey<br />
+-Caleb Elrod<br />
+-Elena Le<br />
+-William Perry<br />
+-Michael Schwab<br />
+
+<br />
+https://github.com/celrod14/CPSC-3720-Software-Engieneering/
