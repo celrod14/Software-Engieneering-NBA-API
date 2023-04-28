@@ -11,7 +11,7 @@ In our NBA Sports API project. We are focusing on getting the stats of NBA playe
 -Either press the select button on the search bar or restart button to be able to re-select player<br />
 -To see recent news select the latest news button towards the top of the site or scroll to the bottom of the page<br />
 
-# Only Teams that Have Player Data
+# Only Teams that Have Player Data to Compare Statistics 
 
 -	LA Clipppers <br />
 -	Los Angeles Lakers<br /> 
