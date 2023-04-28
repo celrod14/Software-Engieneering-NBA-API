@@ -26,7 +26,7 @@ In our NBA Sports API project. We are focusing on getting the stats of NBA playe
 -Michael Schwab<br />
 
 <br />
-https://github.com/celrod14/CPSC-3720-Software-Engieneering/
+https://github.com/celrod14/CPSC-3720-Software-Engieneering/tree/Final
 <br />
 # User Stories
 https://tasks.office.com/Clemson.onmicrosoft.com/Home/PlanViews/67OYrw5Ov0ew3yg7z1iptmQAD2aD?Type=PlanLink&Channel=Link&CreatedTime=638182029568710000
