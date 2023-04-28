@@ -4,8 +4,8 @@ In our NBA Sports API project. We are focusing on getting the stats of NBA playe
 
 # Setup and Run Instructions
 
--Download latest updated branch as a zip file and extract the files<br />
--Open the index.html file in local web browser of choice<br />
+-Download latest updated branch (currently: USE_ME_NOT_OTHER_FOR_PRESENTATION) as a zip file and extract the files<br />
+-Open the innermost index.html file (currently: inside project folder of zip file) in local web browser of choice<br />
 -Search for certain names to select desired players or select from pre-generated list<br />
 -Select two desired players on the same team to compare<br />
 -Either press the select button on the search bar or restart button to be able to re-select player<br />
