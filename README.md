@@ -13,10 +13,10 @@ In our NBA Sports API project. We are focusing on getting the stats of NBA playe
 
 # Only Teams that Have Player Data
 
--Golden State Warriors<br />
--LA Clippers<br />
--Los Angeles Lakers<br />
--New Orlean Pelicans<br />
+-	LA Clipppers <br />
+-	Los Angeles Lakers<br /> 
+-	Phoenix Suns<br />
+-	Portland Trailblazers<br />
 
 # Contributors
 -Jackson Dickey<br />
